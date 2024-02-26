@@ -44,3 +44,24 @@ dist
 npm install -D -E prettier
 npm install -D eslint-config-prettier
 ```
+
+2. *.prettierrc*
+
+```json
+{
+    "singleQuote": true,
+    "semi": false,
+    "bracketSpacing": true,
+    "htmlWhitespaceSensitivity": "ignore",
+    "endOfLine": "auto",
+    "trailingComma": "all",
+    "tabWidth": 2
+}
+```
+
+3. *.prettierignore*
+
+```ignore
+**/public
+**/dist
+```
