@@ -35,3 +35,12 @@ dist
    }
 }
 ```
+
+# prettier
+
+1. 安装
+
+```sh
+npm install -D -E prettier
+npm install -D eslint-config-prettier
+```
