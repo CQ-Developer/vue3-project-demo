@@ -1,18 +1,12 @@
 # eslint
 
-1. 安装及初始化
+1. install
 
 ```sh
 npm init @eslint/config
 ```
 
-2. 安装插件(可选)
-
-```sh
-npm install -D @babel/eslint-parser
-```
-
-3. 配置规则
+2. 配置规则
 
    - [eslint](https://eslint.org/docs/latest/rules)
 
@@ -20,13 +14,13 @@ npm install -D @babel/eslint-parser
 
    - [ts](https://typescript-eslint.io/rules/)
 
-4. *.eslintignore*
+3. *.eslintignore*
 
 ```ignore
 dist
 ```
 
-5. *package.json*
+4. *package.json*
 
 ```json
 {
@@ -38,7 +32,7 @@ dist
 
 # prettier
 
-1. 安装
+1. install
 
 ```sh
 npm install -D -E prettier
@@ -74,4 +68,12 @@ npm install -D eslint-config-prettier
       "format": "prettier --write src"
    }
 }
+```
+
+# stylelint
+
+1. install
+
+```sh
+npm install -D stylelint postcss-html stylelint-config-standard-scss stylelint-config-standard-vue stylelint-config-prettier-scss stylelint-config-recess-order
 ```
