@@ -26,7 +26,7 @@ npm install -D @babel/eslint-parser
 dist
 ```
 
-5. package.json
+5. *package.json*
 
 ```json
 {
@@ -64,4 +64,14 @@ npm install -D eslint-config-prettier
 ```ignore
 **/public
 **/dist
+```
+
+4. *package.json*
+
+```json
+{
+   "scripts": {
+      "format": "prettier --write src"
+   }
+}
 ```
