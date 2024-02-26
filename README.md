@@ -25,3 +25,13 @@ npm install -D @babel/eslint-parser
 ```ignore
 dist
 ```
+
+5. package.json
+
+```json
+{
+   "scripts": {
+      "eslint": "eslint src"
+   }
+}
+```
