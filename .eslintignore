@@ -1,0 +1,5 @@
+# 默认值
+node_modules
+.eslintrc.*
+# 自定义
+dist

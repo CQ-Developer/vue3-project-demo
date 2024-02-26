@@ -12,10 +12,16 @@ npm init @eslint/config
 npm install -D @babel/eslint-parser
 ```
 
-3. rules
+3. 配置规则
 
-- [eslint](https://eslint.org/docs/latest/rules)
+   - [eslint](https://eslint.org/docs/latest/rules)
 
-- [vue](https://eslint.vuejs.org/rules/)
+   - [vue](https://eslint.vuejs.org/rules/)
 
-- [ts](https://typescript-eslint.io/rules/)
+   - [ts](https://typescript-eslint.io/rules/)
+
+4. *.eslintignore*
+
+```ignore
+dist
+```
