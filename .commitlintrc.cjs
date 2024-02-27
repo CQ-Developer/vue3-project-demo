@@ -1,0 +1,16 @@
+module.exports = {
+    extends: [
+        '@commitlint/config-conventional'
+    ],
+    ignores: [
+        commit => commit.includes('init')
+    ],
+    rules: {
+        'body-leading-blank': [1, 'always'],
+        'footer-leading-blank': [1, 'always'],
+        'header-max-length': [2, 'always', 108],
+        'subject-empty': [2, 'never'],
+        'subject-case': [0],
+        'type-empty': [2, 'never']
+    }
+}

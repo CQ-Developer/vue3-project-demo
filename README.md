@@ -79,11 +79,9 @@ module.export = {
 npm install -D stylelint postcss-html stylelint-config-standard-scss stylelint-config-standard-vue stylelint-config-prettier-scss stylelint-config-recess-order
 ```
 
-2. rules
+2. [.stylelintrc.cjs](./.stylelintrc.cjs)
 
-   - [stylelint](https://stylelint.io/user-guide/rules)
-
-3. [.stylelintrc.cjs](./.stylelintrc.cjs)
+   - [rules](https://stylelint.io/user-guide/rules)
 
 ```javascript
 module.exports = {
@@ -130,7 +128,7 @@ module.exports = {
 }
 ```
 
-4. [.stylelintignore](./.stylelintignore)
+3. [.stylelintignore](./.stylelintignore)
 
 ```ignore
 node_modules/*
@@ -138,7 +136,7 @@ dist/*
 public/*
 ```
 
-5. [package.json](./package.json)
+4. [package.json](./package.json)
 
 ```json
 {
@@ -174,4 +172,27 @@ npm run format
 
 ```sh
 npm install -D @commitlint/config-conventional @commitlint/cli
+```
+
+2. [.commitlintrc.cjs](./.commitlintrc.cjs)
+
+   - [rules](https://commitlint.js.org/reference/rules.html)
+
+```javascript
+module.exports = {
+    extends: [
+        '@commitlint/config-conventional'
+    ],
+    ignores: [
+        commit => commit.includes('init')
+    ],
+    rules: {
+        'body-leading-blank': [1, 'always'],
+        'footer-leading-blank': [1, 'always'],
+        'header-max-length': [2, 'always', 108],
+        'subject-empty': [2, 'never'],
+        'subject-case': [0],
+        'type-empty': [2, 'never']
+    }
+}
 ```
