@@ -235,3 +235,12 @@ npm run commitlint
 ```sh
 npm install element-plus @element-plus/icons-vue
 ```
+
+2. [main.ts](./src/main.ts)
+
+```typescript
+import ElementPlus from 'element-plus'
+import 'element-plus/dist/index.css'
+
+app.use(ElementPlus)
+```
