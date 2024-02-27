@@ -146,3 +146,11 @@ public/*
     }
 }
 ```
+
+# husky
+
+1. install
+
+```sh
+npm install -D husky
+```
