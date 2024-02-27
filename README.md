@@ -80,7 +80,7 @@ npm install -D stylelint postcss-html stylelint-config-standard-scss stylelint-c
 
 2. rules
 
-   - (stylelint)[https://stylelint.io/user-guide/rules]
+   - [stylelint](https://stylelint.io/user-guide/rules)
 
 3. *.stylelintrc.cjs*
 
