@@ -136,3 +136,13 @@ node_modules/*
 dist/*
 public/*
 ```
+
+5. *package.json*
+
+```json
+{
+    "scripts": {
+        "stylelint": "stylelint src/**/*.{css,scss,vue} --cache --fix"
+    }
+}
+```

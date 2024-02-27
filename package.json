@@ -10,6 +10,7 @@
     "build-only": "vite build",
     "type-check": "vue-tsc --build --force",
     "eslint": "eslint src",
+    "stylelint": "stylelint src/**/*.{css,scss,vue} --cache --fix",
     "format": "prettier --write src"
   },
   "dependencies": {
