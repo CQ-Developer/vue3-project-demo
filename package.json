@@ -11,7 +11,8 @@
     "type-check": "vue-tsc --build --force",
     "eslint": "eslint src",
     "stylelint": "stylelint src/**/*.{css,scss,vue} --cache --fix",
-    "format": "prettier --write src"
+    "format": "prettier --write src",
+    "prepare": "husky"
   },
   "dependencies": {
     "vue": "^3.4.15"

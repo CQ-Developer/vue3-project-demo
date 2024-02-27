@@ -154,3 +154,15 @@ public/*
 ```sh
 npm install -D husky
 ```
+
+2. init
+
+```sh
+npx husky init
+```
+
+3. *pre-commit*
+
+```sh
+npm run format
+```
