@@ -13,7 +13,9 @@
     "stylelint": "stylelint src/**/*.{css,scss,vue} --cache --fix",
     "format": "prettier --write src",
     "prepare": "husky",
-    "commitlint": "commitlint --config .commitlintrc.cjs -e -V"
+    "commitlint": "commitlint --config .commitlintrc.cjs -e -V",
+    "build:test": "vue-tsc && vite build --mode test",
+    "build:pro": "vue-tsc && vite build --mode production"
   },
   "dependencies": {
     "@element-plus/icons-vue": "^2.3.1",

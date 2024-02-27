@@ -270,3 +270,43 @@ export default defineConfig({
   ]
 })
 ```
+
+# 环境配置
+
+1. [dev](./.env.development)
+
+```properties
+NODE_ENV='development'
+VITE_APP_TITLE='vue3-project-demo'
+VITE_APP_BASE_API='/dev-api'
+VITE_SERVE='http://xxx.com'
+```
+
+2. [prod](./.env.production)
+
+```properties
+NODE_ENV='production'
+VITE_APP_TITLE='vue3-project-demo'
+VITE_APP_BASE_API='/prod-api'
+VITE_SERVE='http://yyy.com'
+```
+
+3. [test](./.env.test)
+
+```properties
+NODE_ENV='production'
+VITE_APP_TITLE='vue3-project-demo'
+VITE_APP_BASE_API='/test-api'
+VITE_SERVE='http://zzz.com'
+```
+
+4. [package.json](./package.json)
+
+```json
+{
+    "scripts": {
+        "build:test": "vue-tsc && vite build --mode test",
+        "build:pro": "vue-tsc && vite build --mode production"
+    }
+}
+```
