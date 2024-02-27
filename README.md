@@ -192,7 +192,38 @@ module.exports = {
         'header-max-length': [2, 'always', 108],
         'subject-empty': [2, 'never'],
         'subject-case': [0],
-        'type-empty': [2, 'never']
+        'type-empty': [2, 'never'],
+        'type-enum': [2, 'always',
+            [
+                'build',
+                'chore',
+                'ci',
+                'docs',
+                'feat',
+                'fix',
+                'perf',
+                'refactor',
+                'revert',
+                'style',
+                'test',
+            ]
+        ]
     }
 }
+```
+
+3. [package.json](./package.json)
+
+```json
+{
+    "scripts": {
+        "commitlint": "commitlint --config .commitlintrc.cjs -e -V"
+    }
+}
+```
+
+4. [commit-msg](./.husky/commit-msg)
+
+```sh
+npm run commitlint
 ```

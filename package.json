@@ -12,7 +12,8 @@
     "eslint": "eslint src",
     "stylelint": "stylelint src/**/*.{css,scss,vue} --cache --fix",
     "format": "prettier --write src",
-    "prepare": "husky"
+    "prepare": "husky",
+    "commitlint": "commitlint --config .commitlintrc.cjs -e -V"
   },
   "dependencies": {
     "vue": "^3.4.15"
