@@ -167,3 +167,11 @@ npx husky init
 ```sh
 npm run format
 ```
+
+# [commitlint](https://commitlint.js.org/)
+
+1. install
+
+```sh
+npm install -D @commitlint/config-conventional @commitlint/cli
+```
