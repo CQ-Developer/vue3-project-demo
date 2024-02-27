@@ -8,7 +8,7 @@ import Components from 'unplugin-vue-components/vite'
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 
 import path from 'path'
-import vitePluginSvgsIcons from 'vite-plugin-svgs-icons'
+import { createSvgIconsPlugin } from 'vite-plugin-svg-icons'
 
 export default defineConfig({
   plugins: [
@@ -19,9 +19,11 @@ export default defineConfig({
     Components({
       resolvers: [ElementPlusResolver()]
     }),
-    vitePluginSvgsIcons({
-      dir: path.resolve(__dirname, 'src', 'assets', 'svg'),
-      moduleId: 'virtual:svg-icon'
+    createSvgIconsPlugin({
+      iconDirs: [
+        path.resolve(__dirname, 'src', 'assets', 'svg')
+      ],
+      symbolId: 'icon-[dir]-[name]'
     })
   ],
   resolve: {

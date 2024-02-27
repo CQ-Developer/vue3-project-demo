@@ -311,25 +311,27 @@ VITE_SERVE='http://zzz.com'
 }
 ```
 
-# [svg](vite-plugin-svgs-icons)
+# [svg](https://github.com/vbenjs/vite-plugin-svg-icons/tree/main#readme)
 
 1. install
 
 ```sh
-npm install -D vite-plugin-svgs-icons
+npm install -D vite-plugin-svg-icons
 ```
 
 2. [vite.config.ts](./vite.config.ts)
 
 ```typescript
 import path from 'path'
-import vitePluginSvgsIcons from 'vite-plugin-svgs-icons'
+import { createSvgIconsPlugin } from 'vite-plugin-svg-icons'
 
 export default defineConfig({
-    plugins: [
-    vitePluginSvgsIcons({
-      dir: path.resolve(__dirname, 'src', 'assets', 'svg'),
-      moduleId: 'virtual:svg-icon'
+  plugins: [
+    createSvgIconsPlugin({
+      iconDirs: [
+        path.resolve(__dirname, 'src', 'assets', 'svg')
+      ],
+      symbolId: 'icon-[dir]-[name]'
     })
   ]
 })
@@ -338,22 +340,9 @@ export default defineConfig({
 3. 在[main.ts](./src/main.ts)中全局注册
 
 ```typescript
-import svgIcon from 'virtual:svg-icon'
-
-app.component('svg-icon', svgIcon)
+import 'virtual:svg-icons-register'
 ```
 
-4. 在组件中局部注册使用
+4. 封装矢量图组件
 
-```vue
-<template>
-  <div>
-    <h1>svg test</h1>
-    <svgIcon name="test" style="width: 22px;"></svgIcon>
-  </div>
-</template>
-
-<script setup lang="ts">
-import svgIcon from 'virtual:svg-icon'
-</script>
-```
+   - [SvgIcon.vue](./src/components/SvgIcon.vue)
