@@ -245,3 +245,28 @@ import zhCn from 'element-plus/dist/locale/zh-cn.mjs'
 
 app.use(ElementPlus, { locale: zhCn })
 ```
+
+3. 按需导入
+
+```sh
+npm install -D unplugin-vue-components unplugin-auto-import
+```
+
+- [vite.config.ts](./vite.config.ts)
+
+```typescript
+import AutoImport from 'unplugin-auto-import/vite'
+import Components from 'unplugin-vue-components/vite'
+import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
+
+export default defineConfig({
+  plugins: [
+    AutoImport({
+      resolvers: [ElementPlusResolver()]
+    }),
+    Components({
+      resolvers: [ElementPlusResolver()]
+    })
+  ]
+})
+```
