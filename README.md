@@ -14,13 +14,13 @@ npm init @eslint/config
 
    - [ts](https://typescript-eslint.io/rules/)
 
-3. *.eslintignore*
+3. [.eslintignore](./.eslintignore)
 
 ```ignore
 dist
 ```
 
-4. *package.json*
+4. [package.json](./package.json)
 
 ```json
 {
@@ -39,28 +39,29 @@ npm install -D -E prettier
 npm install -D eslint-config-prettier
 ```
 
-2. *.prettierrc*
+2. [.prettierrc.cjs](./.prettierrc.cjs)
 
-```json
-{
-    "singleQuote": true,
-    "semi": false,
-    "bracketSpacing": true,
-    "htmlWhitespaceSensitivity": "ignore",
-    "endOfLine": "auto",
-    "trailingComma": "all",
-    "tabWidth": 2
+```javascript
+module.export = {
+  singleQuote: true,
+  semi: false,
+  bracketSpacing: true,
+  htmlWhitespaceSensitivity: "ignore",
+  endOfLine: "auto",
+  trailingComma: "all",
+  tabWidth: 2
 }
+
 ```
 
-3. *.prettierignore*
+3. [.prettierignore](./.prettierignore)
 
 ```ignore
 **/public
 **/dist
 ```
 
-4. *package.json*
+4. [package.json](./package.json)
 
 ```json
 {
@@ -82,7 +83,7 @@ npm install -D stylelint postcss-html stylelint-config-standard-scss stylelint-c
 
    - [stylelint](https://stylelint.io/user-guide/rules)
 
-3. *.stylelintrc.cjs*
+3. [.stylelintrc.cjs](./.stylelintrc.cjs)
 
 ```javascript
 module.exports = {
@@ -129,7 +130,7 @@ module.exports = {
 }
 ```
 
-4. *.stylelintignore*
+4. [.stylelintignore](./.stylelintignore)
 
 ```ignore
 node_modules/*
@@ -137,7 +138,7 @@ dist/*
 public/*
 ```
 
-5. *package.json*
+5. [package.json](./package.json)
 
 ```json
 {
@@ -161,7 +162,7 @@ npm install -D husky
 npx husky init
 ```
 
-3. *pre-commit*
+3. [pre-commit](./.husky/pre-commit)
 
 ```sh
 npm run format
