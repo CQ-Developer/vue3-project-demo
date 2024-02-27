@@ -6,7 +6,7 @@
 npm init @eslint/config
 ```
 
-2. 配置规则
+2. rules
 
    - [eslint](https://eslint.org/docs/latest/rules)
 
@@ -76,4 +76,63 @@ npm install -D eslint-config-prettier
 
 ```sh
 npm install -D stylelint postcss-html stylelint-config-standard-scss stylelint-config-standard-vue stylelint-config-prettier-scss stylelint-config-recess-order
+```
+
+2. rules
+
+   - (stylelint)[https://stylelint.io/user-guide/rules]
+
+3. *.stylelintrc.cjs*
+
+```javascript
+module.exports = {
+    extends: [
+        "stylelint-config-standard-scss",
+        "stylelint-config-standard-vue/scss",
+        "stylelint-config-prettier-scss",
+        "stylelint-config-recess-order"
+    ],
+    overrides: [
+        {
+            files: [
+                '**/*.(scss|css|vue|html)'
+            ],
+            customSyntax: 'postcss-scss'
+        },
+        {
+            files: [
+                '**/.*.(html|vue)'
+            ],
+            customSyntax: 'postcss-html'
+        }
+    ],
+    ignoreFiles: [
+        '**/*.js',
+        '**/*.jsx',
+        '**/*.ts',
+        '**/*.tsx',
+        '**/*.json',
+        '**/*.md',
+        '**/*.yaml'
+    ],
+    rules: {
+        'value-keyword-case': 'lower',
+        'no-descending-specificity': true,
+        'function-url-quotes': 'always',
+        'no-empty-source': true,
+        'selector-class-pattern': 'string',
+        'property-no-unknown': true,
+        'value-no-vendor-prefix': true,
+        'property-no-vendor-prefix': true,
+        'selector-pseudo-class-no-unknown': true
+    }
+}
+```
+
+4. *.stylelintignore*
+
+```ignore
+node_modules/*
+dist/*
+public/*
 ```
