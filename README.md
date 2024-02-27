@@ -227,3 +227,11 @@ module.exports = {
 ```sh
 npm run commitlint
 ```
+
+# [element-plus](https://element-plus.org/zh-CN/)
+
+1. install
+
+```sh
+npm install element-plus @element-plus/icons-vue
+```
