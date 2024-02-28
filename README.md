@@ -346,3 +346,26 @@ import 'virtual:svg-icons-register'
 4. 封装矢量图组件
 
    - [SvgIcon.vue](./src/components/SvgIcon.vue)
+
+5. 使用插件的方式将SvgIcon注册为全局组件
+
+- 创建插件[index.ts](./src/components/index.ts)
+
+```typescript
+import { type App } from 'vue'
+import SvgIcon from '@/components/SvgIcon.vue'
+
+export default {
+  install: (app: App) => {
+    app.component('SvgIcon', SvgIcon)
+  }
+}
+```
+
+- 在[main.ts](./src/main.ts)中注册插件
+
+```typescript
+import MyPlugin from '@/components'
+
+app.use(MyPlugin)
+```

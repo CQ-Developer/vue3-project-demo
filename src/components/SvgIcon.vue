@@ -18,7 +18,7 @@ const props = withDefaults(defineProps<IconProps>(), {
   prefix: 'icon',
   color: '#333',
   width: '16px',
-  height: '16px'
+  height: '16px',
 })
 const symbolId = computed(() => `#${props.prefix}-${props.name}`)
 </script>
