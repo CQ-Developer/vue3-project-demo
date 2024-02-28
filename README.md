@@ -424,3 +424,11 @@ export default defineConfig(({ command }) => {
 ```
 
 3. 配置[mock](./mock/user.ts)接口
+
+# [axios](https://axios-http.com/)
+
+1. install
+
+```sh
+npm install axios
+```
