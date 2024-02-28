@@ -369,3 +369,9 @@ import MyPlugin from '@/components'
 
 app.use(MyPlugin)
 ```
+
+# scss
+
+1. [reset.scss](./src/styles/reset.scss)
+
+2. [index.scss](./src/styles/index.scss)
