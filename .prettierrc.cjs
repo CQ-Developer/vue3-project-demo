@@ -5,5 +5,6 @@ module.exports = {
   htmlWhitespaceSensitivity: "ignore",
   endOfLine: "auto",
   trailingComma: "none",
-  tabWidth: 2
+  tabWidth: 2,
+  singleAttributePerLine: true
 }
