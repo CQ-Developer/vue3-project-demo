@@ -6,5 +6,7 @@ module.exports = {
   endOfLine: "auto",
   trailingComma: "none",
   tabWidth: 2,
-  singleAttributePerLine: true
+  singleAttributePerLine: true,
+  printWidth: 160,
+  proseWrap: 'preserve'
 }
