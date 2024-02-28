@@ -372,6 +372,35 @@ app.use(MyPlugin)
 
 # scss
 
-1. [reset.scss](./src/styles/reset.scss)
+1. install
 
-2. [index.scss](./src/styles/index.scss)
+```sh
+npm install -D sass
+```
+
+2. [reset.scss](./src/styles/reset.scss)
+
+3. [index.scss](./src/styles/index.scss)
+
+4. 配置scss全局变量
+
+- [variable.scss](./src/styles/variable.scss)
+
+```scss
+$color: red;
+```
+
+- [vite.config.ts](./vite.config.ts)
+
+```typescript
+export default defineConfig({
+  css: {
+    preprocessorOptions: {
+      scss: {
+        javascriptEnable: true,
+        additionalData: '@import "./src/styles/variable.scss";'
+      }
+    }
+  }
+})
+```

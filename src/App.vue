@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="box">
     <h1>svg test</h1>
     <SvgIcon
       name="test"
@@ -12,4 +12,10 @@
 
 <script setup lang="ts"></script>
 
-<style scoped></style>
+<style scoped lang="scss">
+.box {
+  h1 {
+    color: $color;
+  }
+}
+</style>
