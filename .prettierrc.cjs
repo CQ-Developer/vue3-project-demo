@@ -2,11 +2,11 @@ module.exports = {
   singleQuote: true,
   semi: false,
   bracketSpacing: true,
-  htmlWhitespaceSensitivity: "ignore",
-  endOfLine: "auto",
-  trailingComma: "none",
+  htmlWhitespaceSensitivity: 'ignore',
+  endOfLine: 'auto',
+  trailingComma: 'none',
   tabWidth: 2,
   singleAttributePerLine: true,
-  printWidth: 160,
+  printWidth: 80,
   proseWrap: 'preserve'
 }

@@ -87,7 +87,12 @@ npm install -D stylelint postcss-html stylelint-config-standard-scss stylelint-c
 
 ```javascript
 module.exports = {
-  extends: ['stylelint-config-standard-scss', 'stylelint-config-standard-vue/scss', 'stylelint-config-prettier-scss', 'stylelint-config-recess-order'],
+  extends: [
+    'stylelint-config-standard-scss',
+    'stylelint-config-standard-vue/scss',
+    'stylelint-config-prettier-scss',
+    'stylelint-config-recess-order'
+  ],
   overrides: [
     {
       files: ['**/*.(scss|css|vue|html)'],
@@ -98,7 +103,15 @@ module.exports = {
       customSyntax: 'postcss-html'
     }
   ],
-  ignoreFiles: ['**/*.js', '**/*.jsx', '**/*.ts', '**/*.tsx', '**/*.json', '**/*.md', '**/*.yaml'],
+  ignoreFiles: [
+    '**/*.js',
+    '**/*.jsx',
+    '**/*.ts',
+    '**/*.tsx',
+    '**/*.json',
+    '**/*.md',
+    '**/*.yaml'
+  ],
   rules: {
     'value-keyword-case': 'lower',
     'no-descending-specificity': true,
@@ -174,7 +187,23 @@ module.exports = {
     'subject-empty': [2, 'never'],
     'subject-case': [0],
     'type-empty': [2, 'never'],
-    'type-enum': [2, 'always', ['build', 'chore', 'ci', 'docs', 'feat', 'fix', 'perf', 'refactor', 'revert', 'style', 'test']]
+    'type-enum': [
+      2,
+      'always',
+      [
+        'build',
+        'chore',
+        'ci',
+        'docs',
+        'feat',
+        'fix',
+        'perf',
+        'refactor',
+        'revert',
+        'style',
+        'test'
+      ]
+    ]
   }
 }
 ```
