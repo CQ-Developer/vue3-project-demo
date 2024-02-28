@@ -404,3 +404,11 @@ export default defineConfig({
   }
 })
 ```
+
+# [mockjs](https://github.com/nuysoft/Mock/wiki) and [vite-plugin-mock](https://github.com/vbenjs/vite-plugin-mock?tab=readme-ov-file#vite-plugin-mock)
+
+1. install
+
+```sh
+npm install mockjs vite-plugin-mock -D
+```
