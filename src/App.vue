@@ -1,21 +1,25 @@
 <template>
   <div class="box">
     <h1>svg test</h1>
-    <SvgIcon
-      name="test"
-      width="100px"
-      height="100px"
-      color="green"
-    ></SvgIcon>
   </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { onMounted } from 'vue'
+import request from '@/utils/request'
 
-<style scoped lang="scss">
-.box {
-  h1 {
-    color: $color;
-  }
-}
-</style>
+onMounted(() => {
+  request({
+    url: '/user/login',
+    method: 'post',
+    data: {
+      username: 'admin',
+      password: '111111'
+    }
+  })
+    .then((res) => console.log(res))
+    .catch((err) => console.error(err))
+})
+</script>
+
+<style scoped lang="scss"></style>
