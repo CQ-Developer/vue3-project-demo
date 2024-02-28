@@ -10,32 +10,37 @@ import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 import path from 'path'
 import { createSvgIconsPlugin } from 'vite-plugin-svg-icons'
 
-export default defineConfig({
-  plugins: [
-    vue(),
-    AutoImport({
-      resolvers: [ElementPlusResolver()]
-    }),
-    Components({
-      resolvers: [ElementPlusResolver()]
-    }),
-    createSvgIconsPlugin({
-      iconDirs: [
-        path.resolve(__dirname, 'src', 'assets', 'svg')
-      ],
-      symbolId: 'icon-[dir]-[name]'
-    })
-  ],
-  resolve: {
-    alias: {
-      '@': fileURLToPath(new URL('./src', import.meta.url))
-    }
-  },
-  css: {
-    preprocessorOptions: {
-      scss: {
-        javascriptEnable: true,
-        additionalData: '@import "./src/styles/variable.scss";'
+import { viteMockServe } from 'vite-plugin-mock'
+
+export default defineConfig(({ command }) => {
+  return {
+    plugins: [
+      vue(),
+      AutoImport({
+        resolvers: [ElementPlusResolver()]
+      }),
+      Components({
+        resolvers: [ElementPlusResolver()]
+      }),
+      createSvgIconsPlugin({
+        iconDirs: [path.resolve(__dirname, 'src', 'assets', 'svg')],
+        symbolId: 'icon-[dir]-[name]'
+      }),
+      viteMockServe({
+        enable: command == 'serve'
+      })
+    ],
+    resolve: {
+      alias: {
+        '@': fileURLToPath(new URL('./src', import.meta.url))
+      }
+    },
+    css: {
+      preprocessorOptions: {
+        scss: {
+          javascriptEnable: true,
+          additionalData: '@import "./src/styles/variable.scss";'
+        }
       }
     }
   }

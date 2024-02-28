@@ -24,9 +24,9 @@ dist
 
 ```json
 {
-   "scripts": {
-      "eslint": "eslint src"
-   }
+  "scripts": {
+    "eslint": "eslint src"
+  }
 }
 ```
 
@@ -46,12 +46,14 @@ module.export = {
   singleQuote: true,
   semi: false,
   bracketSpacing: true,
-  htmlWhitespaceSensitivity: "ignore",
-  endOfLine: "auto",
-  trailingComma: "all",
-  tabWidth: 2
+  htmlWhitespaceSensitivity: 'ignore',
+  endOfLine: 'auto',
+  trailingComma: 'none',
+  tabWidth: 2,
+  singleAttributePerLine: true,
+  printWidth: 160,
+  proseWrap: 'preserve'
 }
-
 ```
 
 3. [.prettierignore](./.prettierignore)
@@ -65,9 +67,9 @@ module.export = {
 
 ```json
 {
-   "scripts": {
-      "format": "prettier --write src"
-   }
+  "scripts": {
+    "format": "prettier --write src"
+  }
 }
 ```
 
@@ -85,46 +87,29 @@ npm install -D stylelint postcss-html stylelint-config-standard-scss stylelint-c
 
 ```javascript
 module.exports = {
-    extends: [
-        "stylelint-config-standard-scss",
-        "stylelint-config-standard-vue/scss",
-        "stylelint-config-prettier-scss",
-        "stylelint-config-recess-order"
-    ],
-    overrides: [
-        {
-            files: [
-                '**/*.(scss|css|vue|html)'
-            ],
-            customSyntax: 'postcss-scss'
-        },
-        {
-            files: [
-                '**/.*.(html|vue)'
-            ],
-            customSyntax: 'postcss-html'
-        }
-    ],
-    ignoreFiles: [
-        '**/*.js',
-        '**/*.jsx',
-        '**/*.ts',
-        '**/*.tsx',
-        '**/*.json',
-        '**/*.md',
-        '**/*.yaml'
-    ],
-    rules: {
-        'value-keyword-case': 'lower',
-        'no-descending-specificity': true,
-        'function-url-quotes': 'always',
-        'no-empty-source': true,
-        'selector-class-pattern': 'string',
-        'property-no-unknown': true,
-        'value-no-vendor-prefix': true,
-        'property-no-vendor-prefix': true,
-        'selector-pseudo-class-no-unknown': true
+  extends: ['stylelint-config-standard-scss', 'stylelint-config-standard-vue/scss', 'stylelint-config-prettier-scss', 'stylelint-config-recess-order'],
+  overrides: [
+    {
+      files: ['**/*.(scss|css|vue|html)'],
+      customSyntax: 'postcss-scss'
+    },
+    {
+      files: ['**/.*.(html|vue)'],
+      customSyntax: 'postcss-html'
     }
+  ],
+  ignoreFiles: ['**/*.js', '**/*.jsx', '**/*.ts', '**/*.tsx', '**/*.json', '**/*.md', '**/*.yaml'],
+  rules: {
+    'value-keyword-case': 'lower',
+    'no-descending-specificity': true,
+    'function-url-quotes': 'always',
+    'no-empty-source': true,
+    'selector-class-pattern': 'string',
+    'property-no-unknown': true,
+    'value-no-vendor-prefix': true,
+    'property-no-vendor-prefix': true,
+    'selector-pseudo-class-no-unknown': true
+  }
 }
 ```
 
@@ -140,9 +125,9 @@ public/*
 
 ```json
 {
-    "scripts": {
-        "stylelint": "stylelint src/**/*.{css,scss,vue} --cache --fix"
-    }
+  "scripts": {
+    "stylelint": "stylelint src/**/*.{css,scss,vue} --cache --fix"
+  }
 }
 ```
 
@@ -180,35 +165,17 @@ npm install -D @commitlint/config-conventional @commitlint/cli
 
 ```javascript
 module.exports = {
-    extends: [
-        '@commitlint/config-conventional'
-    ],
-    ignores: [
-        commit => commit.includes('init')
-    ],
-    rules: {
-        'body-leading-blank': [1, 'always'],
-        'footer-leading-blank': [1, 'always'],
-        'header-max-length': [2, 'always', 108],
-        'subject-empty': [2, 'never'],
-        'subject-case': [0],
-        'type-empty': [2, 'never'],
-        'type-enum': [2, 'always',
-            [
-                'build',
-                'chore',
-                'ci',
-                'docs',
-                'feat',
-                'fix',
-                'perf',
-                'refactor',
-                'revert',
-                'style',
-                'test',
-            ]
-        ]
-    }
+  extends: ['@commitlint/config-conventional'],
+  ignores: [(commit) => commit.includes('init')],
+  rules: {
+    'body-leading-blank': [1, 'always'],
+    'footer-leading-blank': [1, 'always'],
+    'header-max-length': [2, 'always', 108],
+    'subject-empty': [2, 'never'],
+    'subject-case': [0],
+    'type-empty': [2, 'never'],
+    'type-enum': [2, 'always', ['build', 'chore', 'ci', 'docs', 'feat', 'fix', 'perf', 'refactor', 'revert', 'style', 'test']]
+  }
 }
 ```
 
@@ -216,9 +183,9 @@ module.exports = {
 
 ```json
 {
-    "scripts": {
-        "commitlint": "commitlint --config .commitlintrc.cjs -e -V"
-    }
+  "scripts": {
+    "commitlint": "commitlint --config .commitlintrc.cjs -e -V"
+  }
 }
 ```
 
@@ -304,10 +271,10 @@ VITE_SERVE='http://zzz.com'
 
 ```json
 {
-    "scripts": {
-        "build:test": "vue-tsc && vite build --mode test",
-        "build:pro": "vue-tsc && vite build --mode production"
-    }
+  "scripts": {
+    "build:test": "vue-tsc && vite build --mode test",
+    "build:pro": "vue-tsc && vite build --mode production"
+  }
 }
 ```
 
@@ -328,9 +295,7 @@ import { createSvgIconsPlugin } from 'vite-plugin-svg-icons'
 export default defineConfig({
   plugins: [
     createSvgIconsPlugin({
-      iconDirs: [
-        path.resolve(__dirname, 'src', 'assets', 'svg')
-      ],
+      iconDirs: [path.resolve(__dirname, 'src', 'assets', 'svg')],
       symbolId: 'icon-[dir]-[name]'
     })
   ]
@@ -412,3 +377,21 @@ export default defineConfig({
 ```sh
 npm install mockjs vite-plugin-mock -D
 ```
+
+2. 配置[vite.config.ts](./vite.config.ts)
+
+```typescript
+import { viteMockServe } from 'vite-plugin-mock'
+
+export default defineConfig(({ command }) => {
+  return {
+    plugins: [
+      viteMockServe({
+        enable: command == 'serve'
+      })
+    ]
+  }
+})
+```
+
+3. 配置[mock](./mock/user.ts)接口
