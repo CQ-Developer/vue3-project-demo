@@ -494,3 +494,63 @@ export const reqLogin = (data: Login) =>
 export const reqUserInfo = () =>
   request.get<UserResponse<User>>(API.USERINFO_URL)
 ```
+
+# [vue router](https://router.vuejs.org/zh/)
+
+1. install
+
+```sh
+npm install vue-router@4
+```
+
+2. 定义路由规则[routes](./src/router/routes.ts)
+
+```typescript
+import type { RouteRecordRaw } from 'vue-router'
+
+export const routes: RouteRecordRaw[] = [
+  {
+    path: '/login',
+    name: 'login',
+    component: () => import('@/view/login/index.vue')
+  },
+  {
+    path: '/',
+    name: 'home',
+    component: () => import('@/view/home/index.vue')
+  },
+  {
+    path: '/404',
+    name: '404',
+    component: () => import('@/view/404/index.vue')
+  },
+  {
+    path: '/:pathMatch(.*)*',
+    name: 'any',
+    redirect: '/404'
+  }
+]
+```
+
+3. 配置路由器[router](./src/router/index.ts)
+
+```typescript
+import { createRouter, createWebHashHistory } from 'vue-router'
+import { routes } from './routes'
+
+export default createRouter({
+  history: createWebHashHistory(),
+  routes: routes,
+  scrollBehavior() {
+    return { top: 0, left: 0 }
+  }
+})
+```
+
+4. 在[main.ts](./src/main.ts)中导入路由器插件
+
+```typescript
+import router from './router'
+
+app.use(router)
+```

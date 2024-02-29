@@ -11,8 +11,11 @@ import 'virtual:svg-icons-register'
 import MyPlugin from '@/components'
 // 引入全局样式
 import '@/styles/index.scss'
+// 导入路由
+import router from './router'
 
 const app = createApp(App)
-app.mount('#app')
 app.use(ElementPlus, { locale: zhCn })
 app.use(MyPlugin)
+app.use(router)
+app.mount('#app')
