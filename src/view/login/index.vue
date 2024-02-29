@@ -45,7 +45,7 @@
 import { reactive } from 'vue'
 import { User, Lock } from '@element-plus/icons-vue'
 
-const loginForm = reactive({ username: '', password: '' })
+const loginForm = reactive({ username: 'admin', password: '111111' })
 </script>
 
 <style scoped lang="scss">
